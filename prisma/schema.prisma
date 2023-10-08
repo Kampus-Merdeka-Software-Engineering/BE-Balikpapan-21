@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Shipment {
+  id       Int    @id @default(autoincrement())
+  status   String
+  origin   String
+  destination String
+  orderedAt DateTime @default(now())
+  pickedAt DateTime   
+  arrivedAt DateTime
+}
+
+model ContactUs {
+  id        Int     @id @default(autoincrement())
+  nama      String  
+  email     String
+  nomorHp   String
+  pesan     String
+}
