@@ -5,7 +5,7 @@ const app = express();
 const { logger } = require('./middleware/logger');
 const { shipmentRoutes } = require('./routes/shipmentRoutes');
 const { contactUsRoutes } = require('./routes/contactUsRoutes');
-const PORT = 3000 || process.env.PORT;
+const PORT = process.env.PORT;
 
 app.use(cors())
 app.use(express.json());
